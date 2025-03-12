@@ -353,7 +353,7 @@ section .title::after{
 }
 .flip-box-container{
     display: flex;
-    flex-wrap: wrap; /* changed from wrap to nowrap to move flip boxes in one row */
+    flex-wrap: wrap; 
     justify-content: center;
     gap: 20px;
     width: 100%;
@@ -424,7 +424,7 @@ section .title::after{
     border:green;
     padding: 10px;
     border-radius: 5px;
-  }
+  } 
 
 /* Add responsive flip-box styling for large screens */
 @media (min-width: 1200px) {
