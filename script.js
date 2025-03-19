@@ -106,6 +106,26 @@ $(document).ready(function(){
         });
     });
 });
+
+// Function to send a message to the Chrome extension's background script
+function sendMessageToBackground(message) {
+    chrome.runtime.sendMessage(message, (response) => {
+        // Check for errors
+        if (chrome.runtime.lastError) {
+            console.error('Error sending message:', chrome.runtime.lastError);
+            // Handle the error: try reconnecting, retrying, etc.
+            // For example, reload the extension or send a new message.
+            if (chrome.runtime.lastError.message.includes('Receiving end does not exist')) {
+                console.warn("Background service worker is not active. Restarting listener...");
+                // Try to reconnect or send the message again.
+                //sendMessageToBackground(message); // Uncomment if retry logic is needed
+            }
+        } else {
+            console.log("Message sent successfully. Response received: ", response);
+        }
+    });
+}
+
 var moveForce = 30; // max popup movement in pixels
 var rotateForce = 20; // max popup rotation in deg
 
