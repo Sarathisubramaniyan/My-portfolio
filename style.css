@@ -337,18 +337,24 @@ section .title::after{
 
 
 /* projects section styling */
-.projects, .teams{   background:#000000;
+.projects{   
+    background:#000000;
     padding: 10%;
     color:#fff;
 }
-.projects .title::before,
-.teams .title::before{
-    background:#000000;
+.projects .title::before
+{
+    background-color: #201e1e;
+    
 }
-.projects .title::after,
-.teams .title::after{
-    background:transparent;
-    content: "what i provide";
+.projects .title::after{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:28px;
+    background:black;
+    content: "what i have done";
 }
 .flip-box-container{
     display: flex;
@@ -358,6 +364,7 @@ section .title::after{
     width: 100%;
     max-width: 1300px;
     margin: auto;
+
 }
 .flip-box {
     display: grid;
@@ -455,8 +462,13 @@ section .title::after{
 }
 
 .skills .title::after{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:27px;
     content: "what i know";
-    background-color: transparent;
+    background-color: black;
 }
 .skills .skills-content .column{
     width: calc(50% - 30px);
